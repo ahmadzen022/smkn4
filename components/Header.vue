@@ -3,14 +3,14 @@
     <!--  Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-success position-fixed w-100">
       <div class="container">
-        <a class="navbar-brand" href="#hero">
+        <NuxtLink class="navbar-brand" to="#hero">
           <img
-            src="assets/logo.png"
+            src="~/assets/logo.png"
             alt=""
             width="35"
             class="d-inline-block align-text me-3 "/>
           SMKN4 TASIKMALAYA
-        </a>
+        </NuxtLink>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon">
           </span>
@@ -19,11 +19,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <NuxtLink  to="/" class="nav-link active"aria-current="page" href="">Beranda</NuxtLink>
+              <NuxtLink  to="/" class="nav-link active"aria-current="page" >Beranda</NuxtLink>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link active dropdown-toggle" href="#"id="navbarDropdownEkskul" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
+              <NuxtLink class="nav-link active dropdown-toggle" to="#"id="navbarDropdownEkskul" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">Profile</NuxtLink>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownProfil" id="navbarDropdownProfil">
                 <li>
                   <nuxt-link to="/profile/sejarah" class="dropdown-item">
@@ -38,16 +38,16 @@
               </ul>
             </li>
             <li class="nav-item">
-              <NuxtLink  to="/kejuruan/jurusan" class="nav-link active"aria-current="page" href="">Kejuruan</NuxtLink>
+              <NuxtLink  to="/kejuruan/jurusan" class="nav-link active"aria-current="page" >Kejuruan</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/eks/eskul" class="nav-link active"aria-current="page" href="">Ekskul</NuxtLink>
+              <NuxtLink to="/eks/eskul" class="nav-link active"aria-current="page" >Ekskul</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink to="/galeriSekolah/galeri" class="nav-link active"aria-current="page" href="">Galeri</NuxtLink>
+              <NuxtLink to="/galeriSekolah/galeri" class="nav-link active"aria-current="page" >Galeri</NuxtLink>
             </li>
             <li class="nav-item">
-              <NuxtLink  to="/contact/kontak" class="nav-link active"aria-current="page" href="">Kontak</NuxtLink>
+              <NuxtLink  to="/contact/kontak" class="nav-link active"aria-current="page" >Kontak</NuxtLink>
             </li>
           </ul>
         </div>

@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import Contact from '../components/Contact.vue';
-
-</script>
 
 <template>
   <div>
@@ -9,7 +5,7 @@ import Contact from '../components/Contact.vue';
 
     <slot />
 
-    <Contact />
+    <Footer />
   </div>
 
 </template>

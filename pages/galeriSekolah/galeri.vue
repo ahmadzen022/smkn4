@@ -26,7 +26,7 @@ const images = [
   { src: foto2, alt: 'Gambar 2', title: 'Porseni 2024' },
   { src: foto5, alt: 'Gambar 3', title: 'Hari Guru' },
   { src: foto4, alt: 'Gambar 4', title: 'MPLS 2024' },
-  { src: foto3, alt: 'Gambar 5', title: 'Makan Bersama' },
+  { src: foto3, alt: 'Gambar 5', title: 'Turnamen MobileLegend' },
   { src: foto6, alt: 'Gambar 6', title: 'P5 tema "Kebekerjaan"' },
 ];
 </script>

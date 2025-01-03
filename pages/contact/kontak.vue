@@ -11,37 +11,37 @@
 
                          <div class="alamat">
                              <img src="assets/kontak/Alamat Icon.png" alt="">
-                             <a href="#" class="d-inline-block w-lg-50 align-middle lh-sm ms-3 ">Jl Depok Kel. Sukamenak Kec. Purbaratu Kota Tasikmalaya 46196.
-                                </a>
+                             <NuxtLink to="#" class="d-inline-block w-lg-50 align-middle lh-sm ms-3 ">Jl Depok Kel. Sukamenak Kec. Purbaratu Kota Tasikmalaya 46196.
+                                </NuxtLink>
                          </div>
 
                          <div class="whatsapp ">
                              <img src="assets/kontak/Whatsapp icon.png" alt="">
-                             <a href="#" class="ms-3">089506334996</a>
+                             <NuxtLink to="#" class="ms-3">089506334996</NuxtLink>
                          </div>
 
                          <div class="email">
                              <img src="assets/kontak/Email Icon.png" alt="">
-                             <a href="#"></a>
+                             <NuxtLink to="#"></NuxtLink>
                          </div>
 
                          <h6 class="mt-4">Social Media</h6>
-                         <a href="#"><img src="assets/kontak/Facebook Icon.png" alt=""> </a>
-                         <a href="#"><img src="assets/kontak/Twiter Icon.png" alt=""></a>
-                         <a href=""><img src="assets/kontak/Instagram Iicon.png" alt=""></a>
-                         <a href="#"></a>
+                         <NuxtLink to="#"><img src="~/assets/kontak/Facebook Icon.png" alt=""> </NuxtLink>
+                         <NuxtLink to="#"><img src="~/assets/kontak/Twiter Icon.png" alt=""></NuxtLink>
+                         <NuxtLink to="#"><img src="~/assets/kontak/Instagram Iicon.png" alt=""></NuxtLink>
+                         <NuxtLink to="#"></NuxtLink>
                      </div>
                  </div>
                  <div class="col-md-6">
                      <div class="card-contact w-100">
-                         <form>
+                         <form @submit.prevent="kirim()">
                              <div class="form-floating mb-4">
-                                 <input type="email" class="form-control" id="floatingInput"
+                                 <input v-model="form.nama" type="email" class="form-control" id="floatingInput"
                                      placeholder="name@example.com">
-                                 <label for="floatingInput" class="d-flex align-items-center">Nama Anda</label>
+                                 <label for="floatingInput" class="d-flex align-items-center">Email Anda</label>
                              </div>
                              <div class="form-floating mb-4">
-                                 <input type="email" class="form-control" id="floatingInput"
+                                 <input v-model="form.pesan" type="text" class="form-control" id="floatingInput"
                                      placeholder="name@example.com">
                                  <label for="floatingInput" class="d-flex align-items-center">Ada
                                      Pertanyaan..?</label>
@@ -56,6 +56,31 @@
      </div>
  </section>
 </template>
+
+<script setup>
+const sb = useSupabaseClient()
+const form = ref({
+    nama: "",
+    pesan: ""
+})
+
+// console.log(sb)
+
+async function kirim() { 
+    console.log(form.value)
+    const { data, error } = await sb
+    .from('kontak')
+    .insert([
+        { nama: form.value.nama, pesan: form.value.pesan },
+    ])
+    .select()
+    if(data) {
+        alert("Pesan terkirim!")
+    } else {
+        throw error
+    }
+}
+</script>
 
 <style> 
 #kontak {

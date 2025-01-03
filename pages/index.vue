@@ -14,9 +14,9 @@
             aspernatur!
           </p>
           <button class="button-lg-secondary me-4">Lihat selengkapnya</button>
-          <a href="#">
+          <NuxtLink to="#">
             <img src="assets/Right Arrow.png" alt="" />
-          </a>
+          </NuxtLink>
         </div>
       </div>
       <img
@@ -36,7 +36,7 @@
       <!-- Berita pertama di kiri -->
       <div class="col-md-6 mb-3">
         <div v-for="(berita, index) in beritaListkiri" :key="index" class="mb-3 shadow-sm berita-card hover-effect">
-          <a :href="berita.link" target="_blank" class="card-link-wrapper">
+          <Nuxtlink :to="berita.link" target="_blank" class="card-link-wrapper">
             <div class="card">
               <div class="row no-gutters">
                 <div class="col-md-4">
@@ -51,14 +51,14 @@
                 </div>
               </div>
             </div>
-          </a>
+          </NuxtLink>
         </div>
       </div>
 
       <!-- Berita kedua di kanan -->
       <div class="col-md-6 mb-3">
         <div v-for="(berita, index) in beritaListKanan" :key="'right-' + index" class="mb-3 shadow-sm berita-card hover-effect">
-          <a :href="berita.link" target="_blank" class="card-link-wrapper">
+          <NuxtLink :to="berita.link" target="_blank" class="card-link-wrapper">
             <div class="card">
               <div class="row no-gutters">
                 <div class="col-md-4">
@@ -73,7 +73,7 @@
                 </div>
               </div>
             </div>
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </div>
